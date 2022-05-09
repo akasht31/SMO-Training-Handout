@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{hyperref}
+\usepackage{amsfonts} 
+\usepackage{amssymb}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    }
+
+\title{An Introduction to Olympiad Number Theory}
+\author{Akash Thiagarajan}
+\date{March 2022}
+\begin{document}
+
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+
+\newcommand{\divides}{\hspace{0.3em}|\hspace{0.3em}}
+
+\newcounter{example}[section]
+
+\newenvironment{solution}{\\ \textbf{Solution:} }{\\~\\}
+\newenvironment{idea}{\\ \emph{Idea:}}{\\}
+\maketitle
+\setcounter{section}{-1}
+\begin{abstract}
+This handout assumes that you are familiar with some basic number theory concepts, in particular divisbility and mods. For example, some amount of short answer contest experience would be fine. We will go through some theory that is essential to olympiad number theory through the lense of "last digit problems", as we shall see shortly
+\end{abstract}
+\section{Notation}
+Throughout this handout, 
+\begin{itemize}
+   \item $a \divides b$ means $a$ is a factor of $b$
+   \item $a \equiv b \mod n$ means that $a$ is congruent to $b$ modulo $n$, i.e. $n \divides a-b$
+\end{itemize}
+
+\section{Introduction}
+If you've taken part in short answer contests, you have probably seen questions of the following form: 
+\begin{center}
+\emph{Find the last $n$ digits of} $\text{xxx}^\text{yyy}$ 
+\end{center}
+They're really easy to create, all you have to do is pick your favourite choice of xxx and yyy, and you have a question! Thus, they are quite popular in short answer contests. \footnote{Look at the past 10 years of SMO Junior, I'm fairly sure that each year will have at least one of these kinds of problems} \\~\\ As it turns out, these questions can be solved by applying a few very simple techniques, and we will use these techniques as a bridge to motivate some olympiad number theory  which many short answer contestants may not know. Along the way, you'll also learn a few tricks that when used together, can wipe out this entire class of problems! \footnote{Which is fortunate, because I never really liked them anyway} While this is far from being a comprehensive guide to Olympiad Number Theory, I hope that it is enough for you to hit the ground running. So sit back, relax, and enjoy the problems!
+
+\section{The Basics}
+\subsection{Finding the pattern (and how it fails)} A common theme in many of these problems is to guess a pattern, which I am sure many of you are familar with. Lets look at an easy example: \\~\\
+\textbf{Example 1}: Find the last digit of $3^{2022}$
+\begin{solution}
+List out the units digits of the powers of $3$: \[1,3,9,7,1 \cdots\] after which it is clear that the pattern will repeat. Hence the last digit of $3^{2022}$ is \boxed{$9$} \\~\\ A more sophisticated way of saying this is noting that $3^4 \equiv 1 \mod 10$ so $3^{2022} \equiv 3^2 \equiv 9 \mod 10$
+\end{solution}
+
+
+
+\end{document}
